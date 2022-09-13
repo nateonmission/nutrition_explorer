@@ -4,6 +4,8 @@ from tabula import read_pdf
 
 file_name = "./RAW_nutrition_data/US_Nutrition_July2022.pdf"
 
+
+
 SKIP_LIST = [
     'SANDWICHES', 
     'SALADS', 
@@ -112,15 +114,21 @@ for this_list in nutrition_list:
         #pause_btn = input("Press Enter")
 
 
+list_of_dicts = []
 for food in section_list:
+    this_dict = {}
     if(len(food) < 13):
         pass
     else:
-        print(f"RECORD: {food}")
+        #print(f"RECORD: {food}")
         for field in FIELDS:
-            #print(f"{food[FIELDS.index(field)]}: {field}")
-            print(f"{field}: {food[FIELDS.index(field)]}")
-        print(" ")
+            #print(f"{field}: {food[FIELDS.index(field)]}")
+            this_dict[field] = food[FIELDS.index(field)]
+        list_of_dicts.append(this_dict)
+
+for item in list_of_dicts:
+    for key, value in item.items():
+        print(f"{key}: {value}")
 
 
 #print(section_list)
