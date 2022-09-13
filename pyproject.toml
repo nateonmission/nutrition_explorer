@@ -1,0 +1,16 @@
+[tool.poetry]
+name = "nutrition"
+version = "0.1.0"
+description = ""
+authors = ["Nate Allen <nallen@directionsresearch.com>"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+pandas = "^1.4.4"
+tabula-py = "^2.5.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
